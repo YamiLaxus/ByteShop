@@ -211,7 +211,9 @@ class _DetailsState extends State<Details> {
 
   void msgListaPedido() async {
     String pedido = "";
-    String fecha = DateTime.now().toString();
+    DateTime dateToday =
+        DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    String fecha = dateToday.toString();
     pedido = pedido + "Pocket";
     pedido = pedido + "\n";
     pedido = pedido + "\n";

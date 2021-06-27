@@ -14,11 +14,72 @@
       },
       "oauth_client": [
         {
+          "client_id": "527226940023-2h45bajm9131qgdbq7ar1813etr5dg9l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phonedev.open_target_sa",
+            "certificate_hash": "2d7ed8e6c76cbf35b0c3beaa4a4a5bfdd5d34a9d"
+          }
+        },
+        {
           "client_id": "527226940023-9ddnn3lhcorjcuv5af9l7o99q9sgcd1o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.phonedev.open_target_sa",
             "certificate_hash": "5a1a675fe198489a194bab29b94caf23f0a59ac0"
+          }
+        },
+        {
+          "client_id": "527226940023-lvffmndckvj8l445g7h1d9cguj2pn8rv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phonedev.open_target_sa",
+            "certificate_hash": "4a844b22dec3acd33bc080cf67bded2323dc0c9e"
+          }
+        },
+        {
+          "client_id": "527226940023-6i57knlebiqd5uitr9nun83j520u21rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7pG7AYxR0cYcX-sRZ-TmdRXZjMwwgrKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527226940023-6i57knlebiqd5uitr9nun83j520u21rl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527226940023:android:985af1d7cdffa78e50f472",
+        "android_client_info": {
+          "package_name": "com.phonedev.pocket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527226940023-iesbgpsrsesgp8p85l33rdhv8r70ofb8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phonedev.pocket",
+            "certificate_hash": "5a1a675fe198489a194bab29b94caf23f0a59ac0"
+          }
+        },
+        {
+          "client_id": "527226940023-nnqt275m37k5u7k58cuoilto44og7r02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phonedev.pocket",
+            "certificate_hash": "2d7ed8e6c76cbf35b0c3beaa4a4a5bfdd5d34a9d"
           }
         },
         {

@@ -208,14 +208,17 @@ class _DetailsState extends State<DetailsTaller> {
 
   void msgListaPedido() async {
     String pedido = "";
-    String fecha = DateTime.now().toString();
+    DateTime dateToday =
+        DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    String fecha = dateToday.toString();
     pedido = pedido + "Pocket";
     pedido = pedido + "\n";
     pedido = pedido + "\n";
     pedido = pedido + "FECHA: " + fecha.toString();
     pedido = pedido + "\n";
-    pedido = pedido + "Hola, quiero realizar una consulta, ";
     pedido = pedido + "_______________________________";
+    pedido = pedido + "\n";
+    pedido = pedido + "Hola, quiero realizar una consulta, ";
 
 //Evitar pedidos a 0 ********************************************
 

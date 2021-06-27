@@ -10,7 +10,7 @@ import 'package:open_target_sa/pages/crear_producto.dart';
 import 'package:open_target_sa/pages/about.dart';
 import 'package:open_target_sa/pages/pedidos_lista.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:open_target_sa/services/firebase_services_taller.dart';
+import 'package:open_target_sa/services/firebase_services_arte.dart';
 import 'details_taller.dart';
 
 class MyApp extends StatelessWidget {

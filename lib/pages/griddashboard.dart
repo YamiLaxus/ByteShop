@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_target_sa/pages/home.dart';
 import 'package:open_target_sa/pages/notFound.dart';
 import 'package:open_target_sa/pages/page_acc.dart';
+import 'package:open_target_sa/pages/page_arte_ange.dart';
 import 'package:open_target_sa/pages/page_fix.dart';
 import 'package:open_target_sa/pages/page_tablets.dart';
 import 'package:open_target_sa/pages/page_zapatos.dart';
@@ -18,7 +19,7 @@ class GridDashboard extends StatelessWidget {
   Item item3 = new Item(
       title: "Accesorios", img: "images/categories/acc.png", page: AccPage());
   Item item4 = new Item(
-      title: "Arte", img: "images/categories/art.png", page: NotFound());
+      title: "Arte", img: "images/categories/art.png", page: ArtPage());
   Item item5 = new Item(
       title: "Playeras", img: "images/categories/camisa.png", page: NotFound());
   Item item6 = new Item(
@@ -26,12 +27,10 @@ class GridDashboard extends StatelessWidget {
       img: "images/categories/zapatos.png",
       page: ZapatosPage());
   Item item7 = new Item(
-      title: "Reparaciones",
-      img: "images/categories/fixphone.png",
-      page: FixPage());
+      title: "Reparaciones", img: "images/categories/fix.png", page: FixPage());
   Item item8 = new Item(
       title: "Una cosa más",
-      img: "images/categories/other.png",
+      img: "images/categories/more.png",
       page: NotFound());
 
   @override
