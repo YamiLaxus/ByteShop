@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: TabletPage(title: 'Pocket'),
+      home: TabletPage(title: 'Pocket Tablets'),
     );
   }
 }
@@ -181,7 +181,7 @@ class _MyHomePageState extends State<TabletPage> {
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/tablet1.png'),
+          AssetImage('images/categories/tabet1.jpeg'),
           AssetImage('images/SamsungAseries.webp'),
           AssetImage('images/huaweilogo.png'),
           AssetImage('images/SamsungLogoa.png'),

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: ArtPage(title: 'Taller de Reparaciones'),
+      home: ArtPage(title: 'Artes'),
     );
   }
 }

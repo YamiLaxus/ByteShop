@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: FixPage(title: 'Taller de Reparaciones'),
+      home: FixPage(title: 'Servicio Tecnico'),
     );
   }
 }

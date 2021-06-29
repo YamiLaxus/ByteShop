@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: MyHomePage(title: 'Pocket'),
+      home: MyHomePage(title: 'Pocket Phone'),
     );
   }
 }
@@ -185,7 +185,6 @@ class _MyHomePageState extends State<MyHomePage> {
         boxFit: BoxFit.fill,
         images: [
           AssetImage('images/SamsungAseries.webp'),
-          AssetImage('images/phonebanner.png'),
           AssetImage('images/huaweilogo.png'),
           AssetImage('images/SamsungLogoa.png'),
           AssetImage('images/galaxybnr.jpg'),

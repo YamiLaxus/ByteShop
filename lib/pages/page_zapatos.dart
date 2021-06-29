@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: ZapatosPage(title: 'Pocket'),
+      home: ZapatosPage(title: 'Pocket Calzado'),
     );
   }
 }
