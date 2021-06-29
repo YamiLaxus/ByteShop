@@ -96,7 +96,7 @@ class _MyHomePageState extends State<AccPage> {
     final appBar = AppBar(
       backgroundColor: Color(0xff392850),
       title: !isSearching
-          ? new Text("Pocket")
+          ? new Text("Pocket Accesorios")
           : TextField(
               onChanged: (value) {
                 _filter(value);
@@ -242,11 +242,11 @@ class _MyHomePageState extends State<AccPage> {
                   ),
                   new ListTile(
                     title: new Text(
-                      "Productos",
+                      "Categorias",
                       style: TextStyle(color: Colors.black),
                     ),
                     trailing: new Icon(
-                      Icons.phone_android_sharp,
+                      Icons.category,
                       size: 30.0,
                       color: Colors.black,
                     ),
