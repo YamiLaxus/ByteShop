@@ -56,8 +56,10 @@ class _OtraPagnaState extends State<OtraPagina> {
 
   void msgListaPedido() async {
     String pedido = "";
-    String fecha = DateTime.now().toString();
-    pedido = pedido + "OpenTarget";
+    DateTime dateToday =
+        DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    String fecha = dateToday.toString();
+    pedido = pedido + "Pocket";
     pedido = pedido + "\n";
     pedido = pedido + "\n";
     pedido = pedido + "FECHA: " + fecha.toString();
