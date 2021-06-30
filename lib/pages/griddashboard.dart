@@ -28,7 +28,7 @@ class GridDashboard extends StatelessWidget {
       img: "images/categories/zapatos.png",
       page: ZapatosPage());
   Item item7 = new Item(
-      title: "Reparaciones", img: "images/categories/fix.png", page: FixPage());
+      title: "Servicios", img: "images/categories/fix.png", page: FixPage());
   Item item8 = new Item(
       title: "Una cosa más",
       img: "images/categories/more.png",

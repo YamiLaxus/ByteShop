@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OtraPagina extends StatefulWidget {
   @override
@@ -35,8 +36,38 @@ class _OtraPagnaState extends State<OtraPagina> {
             child: (new Text("Version Beta 1.0 Powered By Phone.Dev.",
                 style: TextStyle(fontSize: 15.0))),
           ),
+          Divider(
+            color: Colors.deepPurple,
+          ),
+          new Container(
+            height: 90.0,
+            child: GridTile(
+              child: new IconButton(
+                  icon: Image.asset("images/whatsapp.png"),
+                  onPressed: () {
+                    msgListaPedido();
+                  }),
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  void msgListaPedido() async {
+    String pedido = "";
+    String fecha = DateTime.now().toString();
+    pedido = pedido + "OpenTarget";
+    pedido = pedido + "\n";
+    pedido = pedido + "\n";
+    pedido = pedido + "FECHA: " + fecha.toString();
+    pedido = pedido + "\n";
+    pedido = pedido + "\n";
+    pedido = pedido + "Hola, .";
+    pedido = pedido + "_______________________________";
+
+//Evitar informacion ********************************************
+
+    await launch("https://wa.me/${50241642429}?text=$pedido");
   }
 }

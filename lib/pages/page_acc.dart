@@ -388,7 +388,7 @@ class _MyHomePageState extends State<AccPage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
+                                          icon: Icon(Icons.arrow_forward_ios,
                                               size: 24, color: Colors.blue),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
@@ -414,18 +414,18 @@ class _MyHomePageState extends State<AccPage> {
                                           child: Align(
                                             alignment: Alignment.bottomRight,
                                             child: GestureDetector(
-                                              child:
-                                                  (!_listaCarro.contains(item))
-                                                      ? Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.green,
-                                                          size: 38,
-                                                        )
-                                                      : Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.red,
-                                                          size: 38,
-                                                        ),
+                                              child: (!_listaCarro
+                                                      .contains(item))
+                                                  ? Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.grey[700],
+                                                      size: 38,
+                                                    )
+                                                  : Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.red,
+                                                      size: 38,
+                                                    ),
                                               onTap: () {
                                                 setState(() {
                                                   if (!_listaCarro

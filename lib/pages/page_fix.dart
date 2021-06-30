@@ -99,7 +99,7 @@ class _MyHomePageState extends State<FixPage> {
     final appBar = AppBar(
       backgroundColor: Color(0xff392850),
       title: !isSearching
-          ? new Text("Servicio Tecnico")
+          ? new Text("Pocket Servicios Team")
           : TextField(
               onChanged: (value) {
                 _filter(value);
@@ -392,8 +392,9 @@ class _MyHomePageState extends State<FixPage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
-                                              size: 24, color: Colors.blue),
+                                          icon: Icon(Icons.arrow_forward_ios,
+                                              size: 24,
+                                              color: Colors.deepPurple[700]),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
                                             builder: (BuildContext context) =>

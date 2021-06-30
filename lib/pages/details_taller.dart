@@ -49,7 +49,7 @@ class _DetailsState extends State<DetailsTaller> {
                 color: Colors.white70,
                 child: CachedNetworkImage(
                     imageUrl: '${widget.product_detail_picture}' + '?alt=media',
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fill,
                     placeholder: (_, __) {
                       return Center(
                           child: CupertinoActivityIndicator(

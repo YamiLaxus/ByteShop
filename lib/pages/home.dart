@@ -391,8 +391,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
-                                              size: 24, color: Colors.blue),
+                                          icon: Icon(Icons.arrow_forward_ios,
+                                              size: 24,
+                                              color: Colors.deepPurple[800]),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
                                             builder: (BuildContext context) =>
@@ -425,18 +426,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                           child: Align(
                                             alignment: Alignment.bottomRight,
                                             child: GestureDetector(
-                                              child:
-                                                  (!_listaCarro.contains(item))
-                                                      ? Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.green,
-                                                          size: 38,
-                                                        )
-                                                      : Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.red,
-                                                          size: 38,
-                                                        ),
+                                              child: (!_listaCarro
+                                                      .contains(item))
+                                                  ? Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.grey[700],
+                                                      size: 38,
+                                                    )
+                                                  : Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.red,
+                                                      size: 38,
+                                                    ),
                                               onTap: () {
                                                 setState(() {
                                                   if (!_listaCarro

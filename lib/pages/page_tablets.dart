@@ -389,8 +389,9 @@ class _MyHomePageState extends State<TabletPage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
-                                              size: 24, color: Colors.blue),
+                                          icon: Icon(Icons.arrow_forward_ios,
+                                              size: 24,
+                                              color: Colors.deepPurple[700]),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
                                             builder: (BuildContext context) =>

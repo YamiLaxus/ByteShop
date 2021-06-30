@@ -176,7 +176,7 @@ class _MyHomePageState extends State<ZapatosPage> {
     final appBarHeight = appBar.preferredSize.height;
     final statusBarHeight = MediaQuery.of(context).padding.top;
 
-    Widget image_carousel = new Container(
+    /* Widget image_carousel = new Container(
       height: 140.0,
       child: new Carousel(
         boxFit: BoxFit.fill,
@@ -198,7 +198,7 @@ class _MyHomePageState extends State<ZapatosPage> {
         dotColor: Colors.deepPurple,
         dotBgColor: Colors.black,
       ),
-    );
+    );*/
 
     return Scaffold(
         appBar: appBar,
@@ -325,19 +325,18 @@ class _MyHomePageState extends State<ZapatosPage> {
               child: Container(
             child: Column(
               children: <Widget>[
-                image_carousel,
+                // image_carousel,
                 Container(height: 0.7, color: Colors.grey),
                 SizedBox(
                   height: 1.0,
                 ),
                 Container(
                     color: Color(0xff392850),
-                    height:
-                        (screenHeight - appBarHeight - statusBarHeight - 140.0),
+                    height: (screenHeight - appBarHeight - statusBarHeight),
                     child: GridView.builder(
                       padding: const EdgeInsets.all(4.0),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2),
+                          crossAxisCount: 1),
                       itemCount: _productosModel.length,
                       itemBuilder: (context, index) {
                         final String imagen = _productosModel[index].image;
@@ -391,8 +390,9 @@ class _MyHomePageState extends State<ZapatosPage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
-                                              size: 24, color: Colors.blue),
+                                          icon: Icon(Icons.arrow_forward_ios,
+                                              size: 24,
+                                              color: Colors.deepPurple[700]),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
                                             builder: (BuildContext context) =>
@@ -417,18 +417,18 @@ class _MyHomePageState extends State<ZapatosPage> {
                                           child: Align(
                                             alignment: Alignment.bottomRight,
                                             child: GestureDetector(
-                                              child:
-                                                  (!_listaCarro.contains(item))
-                                                      ? Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.green,
-                                                          size: 38,
-                                                        )
-                                                      : Icon(
-                                                          Icons.shopping_cart,
-                                                          color: Colors.red,
-                                                          size: 38,
-                                                        ),
+                                              child: (!_listaCarro
+                                                      .contains(item))
+                                                  ? Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.grey[700],
+                                                      size: 38,
+                                                    )
+                                                  : Icon(
+                                                      Icons.shopping_cart,
+                                                      color: Colors.red,
+                                                      size: 38,
+                                                    ),
                                               onTap: () {
                                                 setState(() {
                                                   if (!_listaCarro
