@@ -286,7 +286,7 @@ class _CartState extends State<Cart> {
 
 //Evitar pedidos a 0 ********************************************
     if (valorTotal(_cart).toLowerCase() != "0.0") {
-      await launch("https://wa.me/${50241642429}?text=$pedido");
+      await launch("https://wa.me/${50256951963}?text=$pedido");
     } else {}
   }
 }

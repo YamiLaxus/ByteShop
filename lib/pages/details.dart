@@ -237,6 +237,6 @@ class _DetailsState extends State<Details> {
 
 //Evitar pedidos a 0 ********************************************
 
-    await launch("https://wa.me/${50241642429}?text=$pedido");
+    await launch("https://wa.me/${50256951963}?text=$pedido");
   }
 }

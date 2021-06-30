@@ -9,6 +9,7 @@ import 'package:open_target_sa/pages/page_tablets.dart';
 import 'package:open_target_sa/pages/page_zapatos.dart';
 
 // ignore: must_be_immutable
+
 class GridDashboard extends StatelessWidget {
   Item item1 = new Item(
       title: "Celulares",
@@ -35,6 +36,8 @@ class GridDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    final screenHeight = MediaQuery.of(context).size.height;
     List<Item> myList = [
       item1,
       item2,
@@ -48,13 +51,14 @@ class GridDashboard extends StatelessWidget {
     var color = 0xff453658;
     return Flexible(
       child: GridView.count(
-          childAspectRatio: 1.1,
+          childAspectRatio: 1,
           padding: EdgeInsets.only(top: 20, left: 16, right: 16),
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: myList.map((data) {
             return Container(
+              height: (screenHeight - statusBarHeight),
               decoration: BoxDecoration(
                   color: Color(color), borderRadius: BorderRadius.circular(10)),
               child: Column(

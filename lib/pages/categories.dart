@@ -13,6 +13,9 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    //final appBarHeight = appBar.preferredSize.height;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
     return Scaffold(
         backgroundColor: Color(0xff392850),
         body: Column(

@@ -391,8 +391,11 @@ class _MyHomePageState extends State<ArtPage> {
                                         ),
                                         //Button details *********************************
                                         new IconButton(
-                                          icon: Icon(Icons.info,
-                                              size: 24, color: Colors.blue),
+                                          icon: Icon(
+                                              Icons
+                                                  .perm_device_information_rounded,
+                                              size: 24,
+                                              color: Colors.blue),
                                           onPressed: () => Navigator.of(context)
                                               .push(new MaterialPageRoute(
                                             builder: (BuildContext context) =>

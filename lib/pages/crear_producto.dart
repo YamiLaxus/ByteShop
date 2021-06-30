@@ -84,10 +84,15 @@ class _CrearProductos extends State<CrearProductos> {
           new Padding(
             padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
             child: (new Text(
-                "Luego de realizar el pedido, deberá identificar su pago mediante foto de voleta o caputra de la transferencia. Tambien es necesario que mencione su localidad por si aplicaria costo de envio o recogera su producto en nuestra tienda. \n\nPreciona el Boton de abajo para más información.")),
+                "Luego de realizar el pedido, deberá identificar su pago mediante foto de voleta o caputra de la transferencia. Tambien es necesario que mencione su localidad por si aplicaria costo de envio o recogera su producto en nuestra tienda.")),
           ),
           Divider(
             color: Colors.deepPurple,
+          ),
+          new Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+            child: (new Text(
+                "Nota: Recomendaciones, el obejtivo de nuestra aplicacion es facilitar nuestros productos de forma catalogada para ti, por lo tanto utilizala para obetner informacion.\n\nBajo ningun motivo deposite dinero a otra cuenta bancaria que no sea oficialmente registrada en la aplicacion y te invitamos a visitar las tiendas para que puedas ver los productos por ti mismo. \n\nPreciona el Boton de abajo para más información.")),
           ),
           new Container(
             height: 90.0,
@@ -119,6 +124,6 @@ class _CrearProductos extends State<CrearProductos> {
 
 //Evitar informacion ********************************************
 
-    await launch("https://wa.me/${50241642429}?text=$pedido");
+    await launch("https://wa.me/${50256951963}?text=$pedido");
   }
 }
