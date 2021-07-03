@@ -181,7 +181,6 @@ class _MyHomePageState extends State<TabletPage> {
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/categories/tabet1.jpeg'),
           AssetImage('images/SamsungAseries.webp'),
           AssetImage('images/huaweilogo.png'),
           AssetImage('images/SamsungLogoa.png'),
