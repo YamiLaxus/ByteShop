@@ -180,11 +180,10 @@ class _MyHomePageState extends State<AccPage> {
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/categories/accbanner.jpeg'),
-          AssetImage('images/SamsungAseries.webp'),
-          AssetImage('images/huaweilogo.png'),
-          AssetImage('images/SamsungLogoa.png'),
-          AssetImage('images/galaxybnr.jpg'),
+          AssetImage('images/banners/inpodsBnnr.webp'),
+          AssetImage('images/banners/iphoneChargerBnnr.jpg'),
+          AssetImage('images/banners/samsungBnnr.jpg'),
+          AssetImage('images/banners/pocketBnnr.jpg'),
         ],
         autoplay: true,
         animationCurve: Curves.fastOutSlowIn,

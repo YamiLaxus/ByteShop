@@ -183,10 +183,10 @@ class _MyHomePageState extends State<MyHomePage> {
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/SamsungAseries.webp'),
-          AssetImage('images/huaweilogo.png'),
-          AssetImage('images/SamsungLogoa.png'),
-          AssetImage('images/galaxybnr.jpg'),
+          AssetImage('images/banners/iphoneBnnr.jpg'),
+          AssetImage('images/banners/huaweiBnnr.jpg'),
+          AssetImage('images/banners/samsungBnnr.jpg'),
+          AssetImage('images/banners/pocketBnnr.jpg'),
         ],
         autoplay: true,
         animationCurve: Curves.fastOutSlowIn,
