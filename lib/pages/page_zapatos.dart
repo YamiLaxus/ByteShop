@@ -1,20 +1,16 @@
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_target_sa/models/acc_model.dart';
-import 'package:open_target_sa/models/zapatos_model.dart';
 import 'package:open_target_sa/pages/categories.dart';
 import 'package:open_target_sa/pages/crear_producto.dart';
-import 'package:open_target_sa/pages/details.dart';
 import 'package:open_target_sa/pages/about.dart';
 import 'package:open_target_sa/pages/details_model.dart';
 import 'package:open_target_sa/pages/home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_target_sa/services/firebase_services_zapatos.dart';
-
 import 'carrito_model.dart';
 
 class MyApp extends StatelessWidget {

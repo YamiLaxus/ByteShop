@@ -5,6 +5,7 @@ import 'package:open_target_sa/pages/notFound.dart';
 import 'package:open_target_sa/pages/page_acc.dart';
 import 'package:open_target_sa/pages/page_arte_ange.dart';
 import 'package:open_target_sa/pages/page_fix.dart';
+import 'package:open_target_sa/pages/page_playeras.dart';
 import 'package:open_target_sa/pages/page_tablets.dart';
 import 'package:open_target_sa/pages/page_zapatos.dart';
 
@@ -22,7 +23,7 @@ class GridDashboard extends StatelessWidget {
   Item item4 = new Item(
       title: "Arte", img: "images/categories/art.png", page: ArtPage());
   Item item5 = new Item(
-      title: "Playeras", img: "images/categories/camisa.png", page: NotFound());
+      title: "Playeras", img: "images/categories/camisa.png", page: PlayerasPage());
   Item item6 = new Item(
       title: "Zapatos",
       img: "images/categories/zapatos.png",

@@ -13,7 +13,6 @@ import 'package:open_target_sa/pages/about.dart';
 import 'package:open_target_sa/pages/pedidos_lista.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_target_sa/services/firebase_services.dart';
-import 'package:open_target_sa/services/firebase_services_stack.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -296,6 +295,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: (BuildContext context) => CrearProductos(),
                     )),
                   ),
+                  new Divider(
+                    color: Colors.black,
+                  ),
+                  /*new ListTile(
+                    title: new Text(
+                      "Configuración",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    trailing: new Icon(
+                      Icons.settings,
+                      size: 30.0,
+                      color: Colors.black,
+                    ),
+                    onTap: () =>
+                        Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (BuildContext context) => SettingsPage(),
+                    )),
+                  ),*/
                   new Divider(
                     color: Colors.black,
                   ),

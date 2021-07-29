@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_target_sa/pages/categories.dart';
 import 'package:open_target_sa/pages/home.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class _ScreenState extends State<Screen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MyApp(),
+            builder: (context) => Categories(),
           ),
         );
       },

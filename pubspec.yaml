@@ -57,16 +57,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - images/SamsungAseries.webp
-     - images/SamsungLogoa.png
-     - images/huaweilogo.png
+     - images/banners/huaweilogo.png
      - images/bi.webp
      - images/banrura.png
      - images/whatsapp.png
      - images/PhoneDevLogo.png
      - images/PocketLogo.png
-     - images/galaxybnr.jpg
-     - images/phoneone.jpg
+     - images/banners/galaxybnr.jpg
      - images/categories/acc.png
      - images/categories/camisa.png
      - images/categories/ipad.png
@@ -75,8 +72,6 @@ flutter:
      - images/categories/zapatos.png
      - images/categories/fix.png
      - images/categories/more.png
-     - images/categories/accbanner.jpeg
-     - images/categories/tablet1.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
