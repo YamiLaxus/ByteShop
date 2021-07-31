@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -177,27 +180,22 @@ class _MyHomePageState extends State<PlayerasPage> {
     final appBarHeight = appBar.preferredSize.height;
     final statusBarHeight = MediaQuery.of(context).padding.top;
 
-    /*Widget image_carousel = new Container(
+    Widget image_carousel = new Container(
       height: 140.0,
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/SamsungAseries.webp'),
-          AssetImage('images/phonebanner.png'),
-          AssetImage('images/huaweilogo.png'),
-          AssetImage('images/SamsungLogoa.png'),
-          AssetImage('images/galaxybnr.jpg'),
+          AssetImage('images/banners/kkSt.png')
         ],
-        autoplay: true,
+        autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
-        autoplayDuration: Duration(seconds: 2),
-        animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
         dotColor: Colors.deepPurple,
         dotBgColor: Colors.black,
       ),
-    );*/
+    );
+
     return Scaffold(
         appBar: appBar,
         drawer: Container(
@@ -323,7 +321,7 @@ class _MyHomePageState extends State<PlayerasPage> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    //image_carousel,
+                    image_carousel,
                     Container(height: 1.0, color: Colors.grey),
                     SizedBox(
                       height: 1.0,

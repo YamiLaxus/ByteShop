@@ -16,6 +16,9 @@ class _CategoriesState extends State<Categories> {
     final screenHeight = MediaQuery.of(context).size.height;
     //final appBarHeight = appBar.preferredSize.height;
     final statusBarHeight = MediaQuery.of(context).padding.top;
+    double cardWidth = MediaQuery.of(context).size.width / 3.3;
+    double cardHeight = MediaQuery.of(context).size.height / 3.6;
+
     return Scaffold(
         backgroundColor: Color(0xff392850),
         body: Column(

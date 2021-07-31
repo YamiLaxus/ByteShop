@@ -23,9 +23,9 @@ class GridDashboard extends StatelessWidget {
   Item item4 = new Item(
       title: "Arte", img: "images/categories/art.png", page: ArtPage());
   Item item5 = new Item(
-      title: "Playeras", img: "images/categories/camisa.png", page: PlayerasPage());
+      title: "Kiki Store", img: "images/categories/kkSrLog.jpg", page: PlayerasPage());
   Item item6 = new Item(
-      title: "Zapatos",
+      title: "Calzado R.J",
       img: "images/categories/zapatos.png",
       page: ZapatosPage());
   Item item7 = new Item(
@@ -39,6 +39,8 @@ class GridDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     final statusBarHeight = MediaQuery.of(context).padding.top;
     final screenHeight = MediaQuery.of(context).size.height;
+    double cardWidth = MediaQuery.of(context).size.width / 2;
+    double cardHeight = MediaQuery.of(context).size.height / 2;
     List<Item> myList = [
       item1,
       item2,
@@ -50,13 +52,14 @@ class GridDashboard extends StatelessWidget {
       item8
     ];
     var color = 0xff453658;
+
     return Flexible(
       child: GridView.count(
-          childAspectRatio: 1,
           padding: EdgeInsets.only(top: 20, left: 16, right: 16),
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 12,
+          childAspectRatio: 1.4,
           children: myList.map((data) {
             return Container(
               height: (screenHeight - statusBarHeight),
@@ -67,10 +70,10 @@ class GridDashboard extends StatelessWidget {
                 children: [
                   Image.asset(
                     data.img,
-                    width: 42,
+                    width: 50,
                   ),
                   SizedBox(
-                    height: 14,
+                    height: 10,
                   ),
                   Text(
                     data.title,
@@ -83,7 +86,7 @@ class GridDashboard extends StatelessWidget {
                   ),
                   IconButton(
                       icon: Icon(Icons.arrow_right,
-                          size: 24, color: Colors.white),
+                          size: 35, color: Colors.white),
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => data.page));

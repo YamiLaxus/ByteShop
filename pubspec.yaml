@@ -68,6 +68,9 @@ flutter:
      - images/banners/pocketBnnr.jpg
      - images/banners/iphoneChargerBnnr.jpg
      - images/banners/inpodsBnnr.webp
+     - images/banners/kikiStore.png
+     - images/banners/kkSt.png
+     - images/categories/kkSrLog.jpg
      - images/categories/acc.png
      - images/categories/camisa.png
      - images/categories/ipad.png
