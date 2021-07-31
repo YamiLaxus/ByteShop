@@ -101,7 +101,7 @@ class _MyHomePageState extends State<PlayerasPage> {
     final appBar = AppBar(
       backgroundColor: Color(0xff392850),
       title: !isSearching
-          ? new Text("Kiki Playeras")
+          ? new Text("Pcket - Kiki Store")
           : TextField(
         onChanged: (value) {
           _filter(value);
