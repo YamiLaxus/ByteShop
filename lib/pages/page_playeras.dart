@@ -190,9 +190,9 @@ class _MyHomePageState extends State<PlayerasPage> {
         autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
         dotSize: 4.0,
-        indicatorBgPadding: 2.0,
+        indicatorBgPadding: 1.0,
         dotColor: Colors.deepPurple,
-        dotBgColor: Colors.black,
+        dotBgColor: Colors.transparent,
       ),
     );
 
@@ -328,7 +328,7 @@ class _MyHomePageState extends State<PlayerasPage> {
                     ),
                     Container(
                         color: Color(0xff392850),
-                        height: (screenHeight - appBarHeight - statusBarHeight),
+                        height: (screenHeight - appBarHeight - statusBarHeight - 140.0),
                         child: GridView.builder(
                           padding: const EdgeInsets.all(2.0),
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
