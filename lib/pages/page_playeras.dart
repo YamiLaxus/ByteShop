@@ -185,7 +185,7 @@ class _MyHomePageState extends State<PlayerasPage> {
       child: new Carousel(
         boxFit: BoxFit.fill,
         images: [
-          AssetImage('images/banners/kkSt.png')
+          AssetImage('images/banners/kkSt.jpeg')
         ],
         autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
