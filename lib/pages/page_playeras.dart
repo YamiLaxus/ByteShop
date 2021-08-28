@@ -61,13 +61,13 @@ class _MyHomePageState extends State<PlayerasPage> {
 
   _MyHomePageState(
       {this.product_name,
-        this.product_picture,
-        this.product_operador,
-        this.product_details,
-        this.product_storage,
-        this.product_ram,
-        this.product_price,
-        this.product_quantity});
+      this.product_picture,
+      this.product_operador,
+      this.product_details,
+      this.product_storage,
+      this.product_ram,
+      this.product_price,
+      this.product_quantity});
 
   @override
   void initState() {
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<PlayerasPage> {
     productSub = db.getProductList().listen((QuerySnapshot snapshot) {
       final List<ProductosModel> products = snapshot.documents
           .map((DocumentSnapshot) =>
-          ProductosModel.fromMap(DocumentSnapshot.data))
+              ProductosModel.fromMap(DocumentSnapshot.data))
           .toList();
 
       setState(() {
@@ -99,44 +99,44 @@ class _MyHomePageState extends State<PlayerasPage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      backgroundColor: Color(0xff392850),
+      backgroundColor: Colors.blue,
       title: !isSearching
           ? new Text("Pcket - Kiki Store")
           : TextField(
-        onChanged: (value) {
-          _filter(value);
-        },
-        style: TextStyle(color: Colors.white),
-        decoration: InputDecoration(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
+              onChanged: (value) {
+                _filter(value);
+              },
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  hintText: "Buscar",
+                  hintStyle: TextStyle(color: Colors.white)),
             ),
-            hintText: "Buscar",
-            hintStyle: TextStyle(color: Colors.white)),
-      ),
       actions: [
         isSearching
             ? new IconButton(
-            icon: Icon(
-              Icons.cancel,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              setState(() {
-                this.isSearching = false;
-              });
-            })
+                icon: Icon(
+                  Icons.cancel,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  setState(() {
+                    this.isSearching = false;
+                  });
+                })
             : new IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              setState(() {
-                this.isSearching = true;
-              });
-            }),
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  setState(() {
+                    this.isSearching = true;
+                  });
+                }),
         Padding(
           padding: const EdgeInsets.only(right: 16.0, top: 12.0),
           child: GestureDetector(
@@ -184,9 +184,7 @@ class _MyHomePageState extends State<PlayerasPage> {
       height: 140.0,
       child: new Carousel(
         boxFit: BoxFit.fill,
-        images: [
-          AssetImage('images/banners/kkSt.jpeg')
-        ],
+        images: [AssetImage('images/banners/kkSt.jpeg')],
         autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
         dotSize: 4.0,
@@ -233,8 +231,8 @@ class _MyHomePageState extends State<PlayerasPage> {
                     ),
                     onTap: () =>
                         Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) => MyApp(),
-                        )),
+                      builder: (BuildContext context) => MyApp(),
+                    )),
                   ),
                   new Divider(
                     color: Colors.black,
@@ -251,8 +249,8 @@ class _MyHomePageState extends State<PlayerasPage> {
                     ),
                     onTap: () =>
                         Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) => Categories(),
-                        )),
+                      builder: (BuildContext context) => Categories(),
+                    )),
                   ),
                   new Divider(
                     color: Colors.black,
@@ -290,8 +288,8 @@ class _MyHomePageState extends State<PlayerasPage> {
                     ),
                     onTap: () =>
                         Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) => CrearProductos(),
-                        )),
+                      builder: (BuildContext context) => CrearProductos(),
+                    )),
                   ),
                   new Divider(
                     color: Colors.black,
@@ -308,8 +306,8 @@ class _MyHomePageState extends State<PlayerasPage> {
                     ),
                     onTap: () =>
                         Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) => OtraPagina(),
-                        )),
+                      builder: (BuildContext context) => OtraPagina(),
+                    )),
                   ),
                 ],
               ),
@@ -319,120 +317,121 @@ class _MyHomePageState extends State<PlayerasPage> {
         body: SafeArea(
           child: SingleChildScrollView(
               child: Container(
-                child: Column(
-                  children: <Widget>[
-                    image_carousel,
-                    Container(height: 1.0, color: Colors.grey),
-                    SizedBox(
-                      height: 1.0,
-                    ),
-                    Container(
-                        color: Color(0xff392850),
-                        height: (screenHeight - appBarHeight - statusBarHeight - 140.0),
-                        child: GridView.builder(
-                          padding: const EdgeInsets.all(2.0),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1),
-                          itemCount: _productosModel.length,
-                          itemBuilder: (context, index) {
-                            final String imagen = _productosModel[index].image;
-                            var item = _productosModel[index];
+            child: Column(
+              children: <Widget>[
+                image_carousel,
+                Container(height: 1.0, color: Colors.grey),
+                SizedBox(
+                  height: 1.0,
+                ),
+                Container(
+                    color: Colors.white,
+                    height:
+                        (screenHeight - appBarHeight - statusBarHeight - 140.0),
+                    child: GridView.builder(
+                      padding: const EdgeInsets.all(2.0),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1),
+                      itemCount: _productosModel.length,
+                      itemBuilder: (context, index) {
+                        final String imagen = _productosModel[index].image;
+                        var item = _productosModel[index];
 
-                            return Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                elevation: 10.0,
-                                child: Stack(
-                                  fit: StackFit.loose,
-                                  alignment: Alignment.center,
+                        return Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            elevation: 10.0,
+                            child: Stack(
+                              fit: StackFit.loose,
+                              alignment: Alignment.center,
+                              children: <Widget>[
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Expanded(
-                                          child: CachedNetworkImage(
-                                              imageUrl:
+                                    Expanded(
+                                      child: CachedNetworkImage(
+                                          imageUrl:
                                               '${_productosModel[index].image}' +
                                                   '?alt=media',
-                                              fit: BoxFit.fill,
-                                              placeholder: (_, __) {
-                                                return Center(
-                                                    child:
+                                          fit: BoxFit.fill,
+                                          placeholder: (_, __) {
+                                            return Center(
+                                                child:
                                                     CupertinoActivityIndicator(
-                                                      radius: 15,
-                                                    ));
-                                              }),
+                                              radius: 15,
+                                            ));
+                                          }),
+                                    ),
+                                    Text(
+                                      '${_productosModel[index].name}',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          height: 25,
                                         ),
                                         Text(
-                                          '${_productosModel[index].name}',
-                                          textAlign: TextAlign.center,
+                                          'Tel. ${_productosModel[index].price.toString()}',
                                           style: TextStyle(
-                                              fontSize: 24.0,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 19.0,
+                                              color: Colors.black),
                                         ),
-                                        SizedBox(
-                                          height: 15,
+                                        //Button details *********************************
+                                        new IconButton(
+                                          icon: Icon(Icons.arrow_forward_ios,
+                                              size: 24,
+                                              color: Colors.pink[200]),
+                                          onPressed: () => Navigator.of(context)
+                                              .push(new MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                DetailsTaller(
+                                              product_detail_name:
+                                                  _productosModel[index].name,
+                                              product_detail_picture:
+                                                  _productosModel[index].image,
+                                              product_detail_operador:
+                                                  _productosModel[index]
+                                                      .operador,
+                                              product_detail_details:
+                                                  _productosModel[index]
+                                                      .details,
+                                              product_detail_storage:
+                                                  _productosModel[index]
+                                                      .storage,
+                                              product_detail_ram:
+                                                  _productosModel[index].ram,
+                                              product_detail_price:
+                                                  _productosModel[index].price,
+                                            ),
+                                          )),
                                         ),
-                                        Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                          children: <Widget>[
-                                            SizedBox(
-                                              height: 25,
-                                            ),
-                                            Text(
-                                              'Tel. ${_productosModel[index].price.toString()}',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 19.0,
-                                                  color: Colors.black),
-                                            ),
-                                            //Button details *********************************
-                                            new IconButton(
-                                              icon: Icon(Icons.arrow_forward_ios,
-                                                  size: 24,
-                                                  color: Colors.pink[200]),
-                                              onPressed: () => Navigator.of(context)
-                                                  .push(new MaterialPageRoute(
-                                                builder: (BuildContext context) =>
-                                                    DetailsTaller(
-                                                      product_detail_name:
-                                                      _productosModel[index].name,
-                                                      product_detail_picture:
-                                                      _productosModel[index].image,
-                                                      product_detail_operador:
-                                                      _productosModel[index]
-                                                          .operador,
-                                                      product_detail_details:
-                                                      _productosModel[index]
-                                                          .details,
-                                                      product_detail_storage:
-                                                      _productosModel[index]
-                                                          .storage,
-                                                      product_detail_ram:
-                                                      _productosModel[index].ram,
-                                                      product_detail_price:
-                                                      _productosModel[index].price,
-                                                    ),
-                                              )),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                right: 8.0,
-                                                bottom: 8.0,
-                                              ),
-                                            ),
-                                          ],
-                                        )
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                            right: 8.0,
+                                            bottom: 8.0,
+                                          ),
+                                        ),
                                       ],
                                     )
                                   ],
-                                ));
-                          },
-                        )),
-                  ],
-                ),
-              )),
+                                )
+                              ],
+                            ));
+                      },
+                    )),
+              ],
+            ),
+          )),
         ));
   }
 }

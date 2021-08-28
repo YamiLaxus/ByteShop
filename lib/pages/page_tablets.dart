@@ -95,7 +95,7 @@ class _MyHomePageState extends State<TabletPage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      backgroundColor: Color(0xff392850),
+      backgroundColor: Colors.blue,
       title: !isSearching
           ? new Text("Pocket Tablets")
           : TextField(
@@ -327,7 +327,7 @@ class _MyHomePageState extends State<TabletPage> {
                   height: 1.0,
                 ),
                 Container(
-                    color: Color(0xff392850),
+                    color: Colors.white,
                     height:
                         (screenHeight - appBarHeight - statusBarHeight - 140.0),
                     child: GridView.builder(

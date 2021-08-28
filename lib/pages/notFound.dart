@@ -11,7 +11,7 @@ class _OtraPagnaState extends State<NotFound> {
     return Scaffold(
       appBar: new AppBar(
         elevation: 0.1,
-        backgroundColor: Color(0xff392850),
+        backgroundColor: Colors.blue,
         title: InkWell(child: Text('Pocket Team')),
         actions: <Widget>[],
       ),

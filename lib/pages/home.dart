@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Pocket Phone'),
     );
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      backgroundColor: Color(0xff392850),
+      backgroundColor: Colors.blue,
       title: !isSearching
           ? new Text("Pocket Phone")
           : TextField(
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
-        dotColor: Colors.deepPurple,
+        dotColor: Colors.blueAccent,
         dotBgColor: Colors.black,
       ),
     );
@@ -347,7 +347,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 1.0,
                 ),
                 Container(
-                    color: Color(0xff392850),
+                    color: Colors.white,
                     height:
                         (screenHeight - appBarHeight - statusBarHeight - 140.0),
                     child: GridView.builder(

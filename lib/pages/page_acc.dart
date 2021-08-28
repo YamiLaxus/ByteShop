@@ -94,7 +94,7 @@ class _MyHomePageState extends State<AccPage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      backgroundColor: Color(0xff392850),
+      backgroundColor: Colors.blue,
       title: !isSearching
           ? new Text("Pocket Accesorios")
           : TextField(
@@ -327,7 +327,7 @@ class _MyHomePageState extends State<AccPage> {
                   height: 1.0,
                 ),
                 Container(
-                    color: Color(0xff392850),
+                    color: Colors.white,
                     height:
                         (screenHeight - appBarHeight - statusBarHeight - 140.0),
                     child: GridView.builder(
