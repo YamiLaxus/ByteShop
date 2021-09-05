@@ -40,6 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<ProductosModel> _productosModel = <ProductosModel>[];
   List<StackModel> _stackModel = <StackModel>[];
 
+  int currentIndex = 0;
+
   List<ProductosModel> _listaCarro = [];
 
   FirebaseServices db = new FirebaseServices();
@@ -199,106 +201,103 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
     return Scaffold(
-        appBar: appBar,
-        drawer: Container(
-          width: 170.0,
-          child: Drawer(
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              color: Colors.white,
-              child: new ListView(
-                padding: EdgeInsets.only(top: 50.0),
-                children: <Widget>[
-                  Container(
-                    height: 150,
-                    // ignore: missing_required_param
-                    child: new UserAccountsDrawerHeader(
-                      accountEmail: new Text(''),
-                      decoration: new BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("images/PocketLogo.png"),
-                              fit: BoxFit.fill)),
-                    ),
+      appBar: appBar,
+      drawer: Container(
+        width: 170.0,
+        child: Drawer(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            color: Colors.white,
+            child: new ListView(
+              padding: EdgeInsets.only(top: 50.0),
+              children: <Widget>[
+                Container(
+                  height: 150,
+                  // ignore: missing_required_param
+                  child: new UserAccountsDrawerHeader(
+                    accountEmail: new Text(''),
+                    decoration: new BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("images/PocketLogo.png"),
+                            fit: BoxFit.fill)),
                   ),
-                  new Divider(
+                ),
+                new Divider(
+                  color: Colors.black,
+                ),
+                new ListTile(
+                  title: new Text(
+                    "Home",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  trailing: new Icon(
+                    Icons.home,
+                    size: 30.0,
                     color: Colors.black,
                   ),
-                  new ListTile(
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => MyApp(),
+                  )),
+                ),
+                new Divider(
+                  color: Colors.black,
+                ),
+                new ListTile(
+                  title: new Text(
+                    "Categorias",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  trailing: new Icon(
+                    Icons.category,
+                    size: 30.0,
+                    color: Colors.black,
+                  ),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => Categories(),
+                  )),
+                ),
+                new Divider(
+                  color: Colors.black,
+                ),
+                new ListTile(
                     title: new Text(
-                      "Home",
+                      "Carrito",
                       style: TextStyle(color: Colors.black),
                     ),
                     trailing: new Icon(
-                      Icons.home,
+                      Icons.shopping_cart,
                       size: 30.0,
                       color: Colors.black,
                     ),
-                    onTap: () =>
-                        Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => MyApp(),
-                    )),
+                    onTap: () {
+                      if (_listaCarro.isNotEmpty)
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Cart(_listaCarro),
+                          ),
+                        );
+                    }),
+                new Divider(
+                  color: Colors.black,
+                ),
+                new ListTile(
+                  title: new Text(
+                    "Informacion de Pagos y Entrega",
+                    style: TextStyle(color: Colors.black),
                   ),
-                  new Divider(
+                  trailing: new FaIcon(
+                    FontAwesomeIcons.list,
+                    size: 30.0,
                     color: Colors.black,
                   ),
-                  new ListTile(
-                    title: new Text(
-                      "Categorias",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    trailing: new Icon(
-                      Icons.category,
-                      size: 30.0,
-                      color: Colors.black,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => Categories(),
-                    )),
-                  ),
-                  new Divider(
-                    color: Colors.black,
-                  ),
-                  new ListTile(
-                      title: new Text(
-                        "Carrito",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      trailing: new Icon(
-                        Icons.shopping_cart,
-                        size: 30.0,
-                        color: Colors.black,
-                      ),
-                      onTap: () {
-                        if (_listaCarro.isNotEmpty)
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => Cart(_listaCarro),
-                            ),
-                          );
-                      }),
-                  new Divider(
-                    color: Colors.black,
-                  ),
-                  new ListTile(
-                    title: new Text(
-                      "Informacion de Pagos y Entrega",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    trailing: new FaIcon(
-                      FontAwesomeIcons.list,
-                      size: 30.0,
-                      color: Colors.black,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => CrearProductos(),
-                    )),
-                  ),
-                  new Divider(
-                    color: Colors.black,
-                  ),
-                  /*new ListTile(
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => CrearProductos(),
+                  )),
+                ),
+                new Divider(
+                  color: Colors.black,
+                ),
+                /*new ListTile(
                     title: new Text(
                       "Configuración",
                       style: TextStyle(color: Colors.black),
@@ -313,172 +312,184 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: (BuildContext context) => SettingsPage(),
                     )),
                   ),*/
-                  new Divider(
+                new Divider(
+                  color: Colors.black,
+                ),
+                new ListTile(
+                  title: new Text(
+                    "Acerca de",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  trailing: new FaIcon(
+                    FontAwesomeIcons.qrcode,
+                    size: 30.0,
                     color: Colors.black,
                   ),
-                  new ListTile(
-                    title: new Text(
-                      "Acerca de",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    trailing: new FaIcon(
-                      FontAwesomeIcons.qrcode,
-                      size: 30.0,
-                      color: Colors.black,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => OtraPagina(),
-                    )),
-                  ),
-                ],
-              ),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => OtraPagina(),
+                  )),
+                ),
+              ],
             ),
           ),
         ),
-        body: SafeArea(
-          child: SingleChildScrollView(
-              child: Container(
-            child: Column(
-              children: <Widget>[
-                image_carousel,
-                Container(height: 1.0, color: Colors.grey),
-                SizedBox(
-                  height: 1.0,
-                ),
-                Container(
-                    color: Colors.white,
-                    height:
-                        (screenHeight - appBarHeight - statusBarHeight - 140.0),
-                    child: GridView.builder(
-                      padding: const EdgeInsets.all(4.0),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2),
-                      itemCount: _productosModel.length,
-                      itemBuilder: (context, index) {
-                        final String imagen = _productosModel[index].image;
-                        var item = _productosModel[index];
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+            child: Container(
+          child: Column(
+            children: <Widget>[
+              image_carousel,
+              Container(height: 1.0, color: Colors.grey),
+              SizedBox(
+                height: 1.0,
+              ),
+              Container(
+                  color: Colors.white,
+                  height:
+                      (screenHeight - appBarHeight - statusBarHeight - 140.0),
+                  child: GridView.builder(
+                    padding: const EdgeInsets.all(4.0),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
+                    itemCount: _productosModel.length,
+                    itemBuilder: (context, index) {
+                      final String imagen = _productosModel[index].image;
+                      var item = _productosModel[index];
 
-                        return Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            elevation: 10.0,
-                            child: Stack(
-                              fit: StackFit.loose,
-                              alignment: Alignment.center,
-                              children: <Widget>[
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Expanded(
-                                      child: CachedNetworkImage(
-                                          imageUrl:
-                                              '${_productosModel[index].image}' +
-                                                  '?alt=media',
-                                          fit: BoxFit.cover,
-                                          placeholder: (_, __) {
-                                            return Center(
-                                                child:
-                                                    CupertinoActivityIndicator(
-                                              radius: 15,
-                                            ));
-                                          }),
-                                    ),
-                                    Text(
-                                      '${_productosModel[index].name}',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 20.0),
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        SizedBox(
-                                          height: 25,
-                                        ),
-                                        Text(
-                                          'Q.${_productosModel[index].price.toString()}',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 19.0,
-                                              color: Colors.black),
-                                        ),
-                                        //Button details *********************************
-                                        new IconButton(
-                                          icon: Icon(Icons.arrow_forward_ios,
-                                              size: 24,
-                                              color: Colors.deepPurple[800]),
-                                          onPressed: () => Navigator.of(context)
-                                              .push(new MaterialPageRoute(
-                                            builder: (BuildContext context) =>
-                                                Details(
-                                              product_detail_name:
-                                                  _productosModel[index].name,
-                                              product_detail_picture:
-                                                  _productosModel[index].image,
-                                              product_detail_operador:
-                                                  _productosModel[index]
-                                                      .operador,
-                                              product_detail_details:
-                                                  _productosModel[index]
-                                                      .details,
-                                              product_detail_storage:
-                                                  _productosModel[index]
-                                                      .storage,
-                                              product_detail_ram:
-                                                  _productosModel[index].ram,
-                                              product_detail_price:
-                                                  _productosModel[index].price,
-                                            ),
-                                          )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            right: 8.0,
-                                            bottom: 8.0,
+                      return Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 10.0,
+                          child: Stack(
+                            fit: StackFit.loose,
+                            alignment: Alignment.center,
+                            children: <Widget>[
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: CachedNetworkImage(
+                                        imageUrl:
+                                            '${_productosModel[index].image}' +
+                                                '?alt=media',
+                                        fit: BoxFit.cover,
+                                        placeholder: (_, __) {
+                                          return Center(
+                                              child: CupertinoActivityIndicator(
+                                            radius: 15,
+                                          ));
+                                        }),
+                                  ),
+                                  Text(
+                                    '${_productosModel[index].name}',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 20.0),
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      SizedBox(
+                                        height: 25,
+                                      ),
+                                      Text(
+                                        'Q.${_productosModel[index].price.toString()}',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 19.0,
+                                            color: Colors.black),
+                                      ),
+                                      //Button details *********************************
+                                      new IconButton(
+                                        icon: Icon(Icons.arrow_forward_ios,
+                                            size: 24,
+                                            color: Colors.deepPurple[800]),
+                                        onPressed: () => Navigator.of(context)
+                                            .push(new MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              Details(
+                                            product_detail_name:
+                                                _productosModel[index].name,
+                                            product_detail_picture:
+                                                _productosModel[index].image,
+                                            product_detail_operador:
+                                                _productosModel[index].operador,
+                                            product_detail_details:
+                                                _productosModel[index].details,
+                                            product_detail_storage:
+                                                _productosModel[index].storage,
+                                            product_detail_ram:
+                                                _productosModel[index].ram,
+                                            product_detail_price:
+                                                _productosModel[index].price,
                                           ),
-                                          child: Align(
-                                            alignment: Alignment.bottomRight,
-                                            child: GestureDetector(
-                                              child: (!_listaCarro
-                                                      .contains(item))
-                                                  ? Icon(
-                                                      Icons.shopping_cart,
-                                                      color: Colors.grey[700],
-                                                      size: 38,
-                                                    )
-                                                  : Icon(
-                                                      Icons.shopping_cart,
-                                                      color: Colors.red,
-                                                      size: 38,
-                                                    ),
-                                              onTap: () {
-                                                setState(() {
-                                                  if (!_listaCarro
-                                                      .contains(item))
-                                                    _listaCarro.add(item);
-                                                  else
-                                                    _listaCarro.remove(item);
-                                                });
-                                              },
-                                            ),
+                                        )),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          right: 8.0,
+                                          bottom: 8.0,
+                                        ),
+                                        child: Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: GestureDetector(
+                                            child: (!_listaCarro.contains(item))
+                                                ? Icon(
+                                                    Icons.shopping_cart,
+                                                    color: Colors.grey[700],
+                                                    size: 38,
+                                                  )
+                                                : Icon(
+                                                    Icons.shopping_cart,
+                                                    color: Colors.red,
+                                                    size: 38,
+                                                  ),
+                                            onTap: () {
+                                              setState(() {
+                                                if (!_listaCarro.contains(item))
+                                                  _listaCarro.add(item);
+                                                else
+                                                  _listaCarro.remove(item);
+                                              });
+                                            },
                                           ),
                                         ),
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            ));
-                      },
-                    )),
-              ],
-            ),
-          )),
-        ));
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ));
+                    },
+                  )),
+            ],
+          ),
+        )),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Inicio',
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              label: 'Categorias',
+              backgroundColor: Colors.deepPurple),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: 'Info',
+              backgroundColor: Colors.red),
+        ],
+      ),
+    );
   }
 }
 
