@@ -76,7 +76,7 @@ class _CartState extends State<Cart> {
           },
           color: Colors.white,
         ),
-        backgroundColor: Color(0xff392850),
+        backgroundColor: Colors.blue[800],
       ),
       body: GestureDetector(
         onVerticalDragUpdate: (details) {

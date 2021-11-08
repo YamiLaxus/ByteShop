@@ -33,7 +33,7 @@ class _CrearProductos extends State<CrearProductos> {
     return Scaffold(
       appBar: new AppBar(
         elevation: 0.1,
-        backgroundColor: Color(0xff392850),
+        backgroundColor: Colors.blue[800],
         title: InkWell(child: Text('Pocket Info')),
         actions: <Widget>[],
       ),
@@ -84,7 +84,7 @@ class _CrearProductos extends State<CrearProductos> {
           new Padding(
             padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
             child: (new Text(
-                "Luego de realizar el pedido, deberá identificar su pago mediante foto de voleta o caputra de la transferencia. Tambien es necesario que mencione su localidad por si aplicaria costo de envio o recogera su producto en nuestra tienda.")),
+                "Luego de realizar el pedido, deberá identificar su pago mediante foto de boletá o captura de la transferencia. También es necesario que mencione su localidad por si aplicaría costo de envío o recogerá su producto en nuestras tiendas.")),
           ),
           Divider(
             color: Colors.deepPurple,
@@ -92,7 +92,7 @@ class _CrearProductos extends State<CrearProductos> {
           new Padding(
             padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
             child: (new Text(
-                "Nota: Recomendaciones, el obejtivo de nuestra aplicacion es facilitar nuestros productos de forma catalogada para ti, por lo tanto utilizala para obetner informacion.\n\nBajo ningun motivo deposite dinero a otra cuenta bancaria que no sea oficialmente registrada en la aplicacion y te invitamos a visitar las tiendas para que puedas ver los productos por ti mismo. \n\nPreciona el Boton de abajo para más información.")),
+                "Nota: Recomendaciones, el objetivo de nuestra aplicación es facilitar nuestros productos de forma catalogada para ti, por lo tanto utilizala para obtener información.\n\nBajo ningún motivo deposite dinero a otra cuenta bancaria que no sea oficialmente registrada en la aplicación y te invitamos a visitar las tiendas para que puedas ver los productos por ti mismo. \n\nPresiona el Botón de abajo para más información.")),
           ),
           new Container(
             height: 90.0,

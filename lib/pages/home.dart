@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_target_sa/models/productos_model.dart';
-import 'package:open_target_sa/models/stack_model.dart';
 import 'package:open_target_sa/pages/categories.dart';
 import 'package:open_target_sa/pages/crear_producto.dart';
 import 'package:open_target_sa/pages/details.dart';
@@ -38,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<ProductosModel> _productosModel = <ProductosModel>[];
-  List<StackModel> _stackModel = <StackModel>[];
+  TextEditingController _searchController = TextEditingController();
 
   int currentIndex = 0;
 
@@ -49,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   StreamSubscription<QuerySnapshot> productSub;
 
   bool isSearching = false;
+  bool isLoading = false;
 
   final product_name;
   final product_picture;
@@ -73,6 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
+    _onSearchChanged() {
+      print(_searchController.text);
+    }
+
     _productosModel = new List();
 
     productSub?.cancel();
@@ -90,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
+    _searchController.dispose();
     productSub?.cancel();
     super.dispose();
   }
@@ -129,14 +134,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 })
             : new IconButton(
                 icon: Icon(
-                  Icons.search,
+                  Icons.info,
                   color: Colors.white,
                 ),
-                onPressed: () {
-                  setState(() {
-                    this.isSearching = true;
-                  });
-                }),
+                onPressed: () {}),
         Padding(
           padding: const EdgeInsets.only(right: 16.0, top: 12.0),
           child: GestureDetector(
@@ -339,15 +340,39 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
           child: Column(
             children: <Widget>[
+              /*Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: _searchController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        hintText: "Buscar",
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  new IconButton(
+                      icon: Icon(
+                        Icons.search,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {}),
+                  SizedBox(width: 20),
+                ],
+              ),*/
               image_carousel,
-              Container(height: 1.0, color: Colors.grey),
-              SizedBox(
-                height: 1.0,
-              ),
               Container(
                   color: Colors.white,
-                  height:
-                      (screenHeight - appBarHeight - statusBarHeight - 140.0),
+                  height: (screenHeight -
+                      appBarHeight -
+                      statusBarHeight -
+                      140.0), //-210.0
                   child: GridView.builder(
                     padding: const EdgeInsets.all(4.0),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -406,8 +431,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       //Button details *********************************
                                       new IconButton(
                                         icon: Icon(Icons.arrow_forward_ios,
-                                            size: 24,
-                                            color: Colors.deepPurple[800]),
+                                            size: 24, color: Colors.red[800]),
                                         onPressed: () => Navigator.of(context)
                                             .push(new MaterialPageRoute(
                                           builder: (BuildContext context) =>
@@ -471,7 +495,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      /*bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: [
@@ -488,7 +512,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'Info',
               backgroundColor: Colors.red),
         ],
-      ),
+      ),*/
     );
   }
 }

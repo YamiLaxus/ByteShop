@@ -20,7 +20,7 @@ class _CategoriesState extends State<Categories> {
     double cardHeight = MediaQuery.of(context).size.height / 3.6;
 
     return Scaffold(
-        backgroundColor: Color(0xff392850),
+        backgroundColor: Colors.blue,
         body: Column(
           children: [
             SizedBox(
@@ -44,7 +44,7 @@ class _CategoriesState extends State<Categories> {
                       Text(
                         "Inicio",
                         style: GoogleFonts.openSans(
-                            color: Color(0xffa29aac),
+                            color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.w600),
                       ),

@@ -34,7 +34,7 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       appBar: new AppBar(
         elevation: 0.1,
-        backgroundColor: Color(0xff392850),
+        backgroundColor: Colors.blue[800],
         title: InkWell(child: Text('Detalles del Producto')),
         actions: <Widget>[],
       ),
@@ -57,63 +57,31 @@ class _DetailsState extends State<Details> {
                       ));
                     }),
               ),
-              footer: new Container(
-                color: Colors.white70,
-                child: ListTile(
-                  leading: new Text(
-                    '${widget.product_detail_name}',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
-                  ),
-                  title: new Row(
-                    children: <Widget>[
-                      Expanded(
-                          child: new Text(
-                        'Q.${widget.product_detail_price.toString()}',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                            color: Colors.red),
-                      )),
-                    ],
-                  ),
-                ),
+              footer: new Container(),
+            ),
+          ),
+          Container(
+            color: Colors.white70,
+            child: ListTile(
+              leading: new Text(
+                '${widget.product_detail_name}',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
+              ),
+              title: new Row(
+                children: <Widget>[
+                  Expanded(
+                      child: new Text(
+                    'Q.${widget.product_detail_price.toString()}',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.red),
+                  )),
+                ],
               ),
             ),
           ),
-
           // ================The first button =============
-          Row(
-            children: <Widget>[
-              // ================ the color button ===========
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return new AlertDialog(
-                            title: new Text(
-                                "Ten un lindo día gracias por visitarnos."),
-                            actions: <Widget>[
-                              new MaterialButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                                child: new Text("Salir"),
-                              ),
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 1,
-                ),
-              )
-            ],
-          ),
-
           Row(
             children: <Widget>[
               // ================ the color button ===========
@@ -122,7 +90,7 @@ class _DetailsState extends State<Details> {
                     onPressed: () {
                       msgListaPedido();
                     },
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     textColor: Colors.white,
                     elevation: 0.2,
                     child: new Text(

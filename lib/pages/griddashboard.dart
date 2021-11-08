@@ -23,11 +23,13 @@ class GridDashboard extends StatelessWidget {
   Item item4 = new Item(
       title: "Arte", img: "images/categories/art.png", page: ArtPage());
   Item item5 = new Item(
-      title: "Kiki Store", img: "images/categories/kkSrLog.jpg", page: PlayerasPage());
+      title: "Kiki Store",
+      img: "images/categories/kkSrLog.jpg",
+      page: PlayerasPage());
   Item item6 = new Item(
       title: "Calzado R.J",
       img: "images/categories/zapatos.png",
-      page: ZapatosPage());
+      page: NotFound());
   Item item7 = new Item(
       title: "Servicios", img: "images/categories/fix.png", page: FixPage());
   Item item8 = new Item(
@@ -64,7 +66,8 @@ class GridDashboard extends StatelessWidget {
             return Container(
               height: (screenHeight - statusBarHeight),
               decoration: BoxDecoration(
-                  color: Color(color), borderRadius: BorderRadius.circular(10)),
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
